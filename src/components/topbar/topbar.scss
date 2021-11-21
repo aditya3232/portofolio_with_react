@@ -8,44 +8,47 @@
     position: fixed; //agar topbar selalu diatas
     top: 0; //agar topbar selalu diatas
     z-index: 2; //agar topbar sticky-top
-}
+    transition: all 1s ease; //transisi (keperluan animasi hamburger). ini merupakan waktu transisi warna agar smooth ketika diklik hamburger
 
-.wrapper {
-    padding: 10px 30px; //memberikan padding/jarak dari pinggir (top,right) kalau 4 (top,right,bottom,left)
-    display: flex; //agar elemen html yg dituliskan sebaris (div,h1,div sebaris)
-    align-items: center; //agar elemen html yg dituliskan semua berada di benar2 tengah
-    justify-content: space-between; //memberikan jarak/space untuk setiap elemen html yg dituliskan
-
-    // memberikan style untuk setiap class yg berada didalam div className="left"
-    .left {
-
-        display: flex; //agar elemen html yg dituliskan sebaris
+    .wrapper {
+        padding: 10px 30px; //memberikan padding/jarak dari pinggir (top,right) kalau 4 (top,right,bottom,left)
+        display: flex; //agar elemen html yg dituliskan sebaris (div,h1,div sebaris)
         align-items: center; //agar elemen html yg dituliskan semua berada di benar2 tengah
+        justify-content: space-between; //memberikan jarak/space untuk setiap elemen html yg dituliskan
 
-        .logo {
-            font-size: 40px; //ukuran huruf
-            font-weight: 700; //tebal huruf
-            text-decoration: none; //menghilangkan dekorasi buat link
-            color: inherit; //menghilangkan warna dari css parent nya, yaitu className="topbar"
-            margin-right: 40px; //memberikan jarak-kanan antara elemen logo dgn yg lain
-        }
+        // memberikan style untuk setiap class yg berada didalam div className="left"
+        .left {
 
-        .itemContainer {
             display: flex; //agar elemen html yg dituliskan sebaris
             align-items: center; //agar elemen html yg dituliskan semua berada di benar2 tengah
-            margin-left: 30px; //memberikan jarak-kiri antara elemen yg lain
 
-            .icon {
-                font-size: 18px;
-                margin-right: 5px;
+            .logo {
+                font-size: 40px; //ukuran huruf
+                font-weight: 700; //tebal huruf
+                text-decoration: none; //menghilangkan dekorasi buat link
+                color: inherit; //menghilangkan warna dari css parent nya, yaitu className="topbar"
+                margin-right: 40px; //memberikan jarak-kanan antara elemen logo dgn yg lain
             }
 
-            // kalau langsung styling elemen html, g usah titik atau pagar
-            span {
-                font-size: 15px;
-                font-weight: 500;
+            .itemContainer {
+                display: flex; //agar elemen html yg dituliskan sebaris
+                align-items: center; //agar elemen html yg dituliskan semua berada di benar2 tengah
+                margin-left: 30px; //memberikan jarak-kiri antara elemen yg lain
+
+                .icon {
+                    font-size: 18px;
+                    margin-right: 5px;
+                }
+
+                // kalau langsung styling elemen html, g usah titik atau pagar
+                span {
+                    font-size: 15px;
+                    font-weight: 500;
+                }
             }
         }
+
+
 
 
     }
@@ -64,7 +67,40 @@
                 width: 100%;
                 height: 3px;
                 background-color: $mainColor;
+                transform-origin: left; //buat animasi jadi cross (keperluan animasi hamburger)
+                transition: all 2s ease; //tarnsisi (keperluan animasi hamburger). ini merupakan waktu transisi dari bentuk haburger jadi silang
             }
         }
     }
+
+    // ketika ada className="(apapun_nama_classnya) active", maka terapkan styling ini
+    // styling ini didalam .topbar
+    // styling ini buat keperluan animasi hamburger
+    &.active {
+        background-color: $mainColor;
+        color: white;
+
+        .hamburger {
+            span {
+
+                // span yg pertama
+                &:first-child {
+                    background-color: white;
+                    transform: rotate(45deg); //buat animasi jadi cross (keperluan animasi hamburger)
+                }
+
+                // span ke dua
+                &:nth-child(2) {
+                    opacity: 0; //buat animasi jadi cross (keperluan animasi hamburger)
+                }
+
+                // span terakhir
+                &:last-child {
+                    background-color: white;
+                    transform: rotate(-45deg); //buat animasi jadi cross (keperluan animasi hamburger)
+                }
+            }
+        }
+    }
+
 }
