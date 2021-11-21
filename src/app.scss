@@ -1,0 +1,27 @@
+// mengatur container app
+.app {
+    height: 100vh;
+
+    // mengatur container sections
+    .sections {
+        width: 100%;
+        height: calc(100vh - 70px); //tinggi sections dikurangi tinggi topbar
+        background-color: lightsalmon;
+        position: relative; //agar setions dibawah topbar. Tidak menumpuk dengan topbar
+        top: 70px; //agar setions dibawah topbar. Tidak menumpuk dengan topbar
+        scroll-snap-type: y mandatory; //agar sekali scroll langsung menuju section yg berikutnya
+        scrollbar-width: none; //menghilangkan tampilan scrollbar halaman website untuk firefox
+
+        // menghilangkan tampilan scrollbar halaman website untuk chrome
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        // mengatur setiap components didalam sections agar memiliki lebar 100 dan tinggi yg sama
+        >* {
+            width: 100vw;
+            height: calc(100vh - 70px); //tinggi sections dikurangi tinggi topbar
+            scroll-snap-align: start; //agar sekali scroll langsung menuju section yg berikutnya
+        }
+    }
+}

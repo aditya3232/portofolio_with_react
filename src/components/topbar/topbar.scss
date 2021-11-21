@@ -1,0 +1,8 @@
+.topbar {
+    width: 100%;
+    height: 70px;
+    background-color: #15023a;
+    position: fixed; //agar topbar selalu diatas
+    top: 0; //agar topbar selalu diatas
+    z-index: 2; //agar topbar sticky-top
+}
