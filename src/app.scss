@@ -9,6 +9,7 @@
         background-color: lightsalmon;
         position: relative; //agar setions dibawah topbar. Tidak menumpuk dengan topbar
         top: 70px; //agar setions dibawah topbar. Tidak menumpuk dengan topbar
+        scroll-behavior: smooth; //agar ketika diklik link, akan scroll smooth menuju komponen lain
         scroll-snap-type: y mandatory; //agar sekali scroll langsung menuju section yg berikutnya
         scrollbar-width: none; //menghilangkan tampilan scrollbar halaman website untuk firefox
 

@@ -1,8 +1,70 @@
+@import "../../global.scss";
+
 .topbar {
     width: 100%;
     height: 70px;
-    background-color: #15023a;
+    background-color: white;
+    color: $mainColor;
     position: fixed; //agar topbar selalu diatas
     top: 0; //agar topbar selalu diatas
     z-index: 2; //agar topbar sticky-top
+}
+
+.wrapper {
+    padding: 10px 30px; //memberikan padding/jarak dari pinggir (top,right) kalau 4 (top,right,bottom,left)
+    display: flex; //agar elemen html yg dituliskan sebaris (div,h1,div sebaris)
+    align-items: center; //agar elemen html yg dituliskan semua berada di benar2 tengah
+    justify-content: space-between; //memberikan jarak/space untuk setiap elemen html yg dituliskan
+
+    // memberikan style untuk setiap class yg berada didalam div className="left"
+    .left {
+
+        display: flex; //agar elemen html yg dituliskan sebaris
+        align-items: center; //agar elemen html yg dituliskan semua berada di benar2 tengah
+
+        .logo {
+            font-size: 40px; //ukuran huruf
+            font-weight: 700; //tebal huruf
+            text-decoration: none; //menghilangkan dekorasi buat link
+            color: inherit; //menghilangkan warna dari css parent nya, yaitu className="topbar"
+            margin-right: 40px; //memberikan jarak-kanan antara elemen logo dgn yg lain
+        }
+
+        .itemContainer {
+            display: flex; //agar elemen html yg dituliskan sebaris
+            align-items: center; //agar elemen html yg dituliskan semua berada di benar2 tengah
+            margin-left: 30px; //memberikan jarak-kiri antara elemen yg lain
+
+            .icon {
+                font-size: 18px;
+                margin-right: 5px;
+            }
+
+            // kalau langsung styling elemen html, g usah titik atau pagar
+            span {
+                font-size: 15px;
+                font-weight: 500;
+            }
+        }
+
+
+    }
+
+    .right {
+
+        .hamburger {
+            width: 32px;
+            height: 25px;
+            display: flex; //memasukkan didalam flex (otomatis sejajar)
+            flex-direction: column; //jika flex direction nya column maka akan flex dalam kolom
+            justify-content: space-between; //memberikan jarak antara span yg berada didalam div hamburger
+            cursor: pointer; //jika diarahkan ke hamburger akan jadi pointer
+
+            span {
+                width: 100%;
+                height: 3px;
+                background-color: $mainColor;
+            }
+        }
+    }
 }
