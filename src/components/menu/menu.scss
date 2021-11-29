@@ -1,0 +1,52 @@
+@import "../../global.scss";
+
+.menu {
+    width: 300px; //memberikan lebar untuk menu
+    height: 100vh; //memberikan tinggi setinggi halaman web
+    background-color: $mainColor; //memberikan warna dengan mainColor
+    position: fixed; //agar posisinya selalu tetap di tempat yang sama (tidak berpengaruh ketika scroll)(posisi fixed mengikuti properti atas,kanan,bawah,kiri)
+    top: 0; //mengatur top posisi fixed. agar menu selalu diatas
+    right: -300px; //mengatur right posisi fixed. agar menu geser 300px (dari lebar), sehingga menu akan menghilang
+    z-index: 2; //mengatur tumpukan elemen. hanya bekerja pada elemen yang diatur posisinya.
+
+    // agar list menu posisi ditengah
+    display: flex; //akan membuat list item didalam container sejajar secara horizontal
+    flex-direction: column; //akan membuat direction list item didalam container sejajar secara vertical
+    align-items: center; //akan memposisikan list item didalam container berdada ditengah (di posisi x)
+    justify-content: center; //akan memposisikan list item didalam container berada ditengah (di posisi y)
+
+    // memberikan transisi agar smooth sesuai dengan pergerakan transisi hamburger
+    transition: all 1s ease;
+
+    // kondisi agar sidebar menu tampil ketika diklik hamburger
+    &.active {
+        right: 0; //ketika diklik hamburger menyebabkan ukuran right .menu menjadi 0 lagi. sehingga akan terlihat sidebar menunya
+    }
+
+    // style unordered list
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-size: 30px;
+        font-weight: 300;
+        color: white;
+        width: 60%;
+
+    }
+
+    // style untuk anchor didalam list
+    li {
+        margin-bottom: 25px; //memberikan jarak untuk setiap list
+
+        a {
+            font-size: inherit; //inherit mengikuti parent htmlnya yaitu ul
+            color: inherit;
+            text-decoration: none;
+        }
+
+        &:hover {
+            font-weight: 500;
+        }
+    }
+}

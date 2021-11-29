@@ -1,5 +1,8 @@
 // hapus import logo from './logo.svg';
 
+// import scss
+import "./app.scss"
+
 // import components
 import Topbar from "./components/topbar/Topbar";
 import Intro from "./components/intro/Intro";
@@ -7,10 +10,9 @@ import Portfolio from "./components/portfolio/Portfolio";
 import Works from "./components/works/Works";
 import Testimonials from "./components/testimonials/Testimonials";
 import Contact from "./components/contact/Contact";
+import Menu from "./components/menu/Menu";
 import {useState} from "react";
 
-// import scss
-import "./app.scss"
 
 // hapus import './App.css';
 function App() {
@@ -22,6 +24,8 @@ function App() {
     <div className="app">
       {/* Topbar akan menangkap parmeter dari Topbar.jsx yg merupakan nilai baru*/}
       <Topbar menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
+      {/* sidebar menu */}
+      <Menu  menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
       {/* sections */}
       <div className="sections">
         <Intro/>

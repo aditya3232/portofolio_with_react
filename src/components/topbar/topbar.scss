@@ -7,7 +7,7 @@
     color: $mainColor;
     position: fixed; //agar topbar selalu diatas
     top: 0; //agar topbar selalu diatas
-    z-index: 2; //agar topbar sticky-top
+    z-index: 3; //mengatur tumpukan elemen. hanya bekerja pada elemen yang diatur posisinya.
     transition: all 1s ease; //transisi (keperluan animasi hamburger). ini merupakan waktu transisi warna agar smooth ketika diklik hamburger
 
     .wrapper {
@@ -58,7 +58,7 @@
         .hamburger {
             width: 32px;
             height: 25px;
-            display: flex; //memasukkan didalam flex (otomatis sejajar)
+            display: flex; //memasukkan didalam flex (defaultnya sejajar)
             flex-direction: column; //jika flex direction nya column maka akan flex dalam kolom
             justify-content: space-between; //memberikan jarak antara span yg berada didalam div hamburger
             cursor: pointer; //jika diarahkan ke hamburger akan jadi pointer
