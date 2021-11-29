@@ -1,3 +1,74 @@
 .intro {
-    background-color: lightpink;
+    background-color: white; //warna background
+    display: flex; //supaya horizontal & didalam flex
+
+    // memberikan style div yang ada didalam container div.intro
+    // flex nya pakai total 12 aja seperti bootstrap
+    .left {
+        flex: 6;
+        overflow: hidden;
+
+        // mengatur ukuran img container
+        .imgContainer {
+            width: 700px;
+            height: 700px;
+            background-color: crimson;
+            border-radius: 50%; //agar memberikan border (agar sudut kotak bisa tidak lancip). dengan angka 50% akan memberikan bentuk circle
+            display: flex; //agar didalam flex
+            align-items: flex-end; //agar posisi berada di akhir flex
+            justify-content: center; //menengahkan img
+            float: right; //karena allign nya ke kiri, maka agar terlihat semua circlenya di float kekanan 
+
+            // mengatur ukuran img
+            .img {
+                width: 90%;
+            }
+        }
+    }
+
+    // memberikan style div yang ada didalam container div.intro
+    .right {
+        flex: 6;
+
+        .wrapper {
+            width: 100%;
+            height: 100%;
+            padding-left: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        h1 {
+            font-size: 60px;
+            margin: 10px 0;
+        }
+
+        h2 {
+            font-size: 35px;
+        }
+
+        h3 {
+            font-size: 30px;
+        }
+    }
+
+    // styling buat link gambar button down
+    a {
+        position: absolute; //position absolute agar tag anchor lepas dari containernya. dan wajib dideklarasikan top/bottom/left/right nya
+        bottom: 10px;
+        // left: 40%;
+
+        img {
+            width: 30px;
+            animation: arrowBlink 2s infinite; //memberikan animasi kepada tag anchor dgn gambar bottom.png. animation:  agak rumit wkwkwkk
+        }
+
+        // memberikan animasi kepada tag anchor dgn gambar bottom.png
+        @keyframes arrowBlink {
+            100% {
+                opacity: 0;
+            }
+        }
+    }
 }
