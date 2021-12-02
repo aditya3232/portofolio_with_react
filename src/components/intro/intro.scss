@@ -50,6 +50,27 @@
 
         h3 {
             font-size: 30px;
+
+            span {
+                font-size: inherit; //font mengikuti parent nya, yaitu h3
+                color: crimson;
+            }
+
+            // menerapkan animasi blink pada ityped
+            .ityped-cursor {
+                animation: blink 1s infinite;
+            }
+
+            // memberikan style end of animation blink opacity jadi 0.  jadi terlihat seperti blink
+            @keyframes blink {
+                50% {
+                    opacity: 1;
+                }
+
+                100% {
+                    opacity: 0;
+                }
+            }
         }
     }
 
