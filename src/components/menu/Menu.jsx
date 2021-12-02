@@ -2,7 +2,7 @@ import "./menu.scss"
 
 export default function Menu({menuOpen, setMenuOpen}) { //ada props disini
     return (
-        // jika menuOpen true maka aktif. nilai default menuOpen udah diatur true di App.jsx
+        // jika menuOpen true maka aktif. nilai default menuOpen udah diatur di App.jsx
         <div className={"menu "+(menuOpen && "active")}> 
             <ul>
                 {/* list disini akan menutup jika diklik */}

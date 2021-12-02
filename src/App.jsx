@@ -17,7 +17,7 @@ import {useState} from "react";
 // hapus import './App.css';
 function App() {
   // inisialisasi nilai default parameter ini, buat keperluan animasi hamburger
-  const [menuOpen,setMenuOpen] = useState(true)
+  const [menuOpen,setMenuOpen] = useState(false)
   return (
     // panggil setiap komponen halaman disini
     // className="app". Akan memanggil scss dengan nama app.scss
